@@ -1,0 +1,24 @@
+.container {
+}
+  
+.table {
+    margin-top: 20px;
+    
+    th, td {
+      text-align: left; /* Change text alignment to left */
+      border-bottom: 1px solid #ddd;
+    }
+}
+  
+.input-group {
+    width: 100%;
+}
+  
+.pagination {
+    margin-top: 20px;
+}
+  
+.btn-outline-secondary .fa, .btn-outline-danger .fa {
+    margin-right: 5px;
+}
+  

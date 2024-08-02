@@ -1,0 +1,75 @@
+<div class="container mt-4">
+  <h2 class="text-center mb-4">Add new Course Screen</h2>
+  <form [formGroup]="courseForm" (ngSubmit)="saveCourse()">
+    <div class="form-group row">
+      <label for="courseName" class="col-sm-2 col-form-label">Course Name:</label>
+      <div class="col-sm-10">
+        <input type="text" matInput formControlName="courseName" id="courseName" class="form-control">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="university" class="col-sm-2 col-form-label">University:</label>
+      <div class="col-sm-10">
+        <input type="text" matInput [matAutocomplete]="autoUniversity" formControlName="university" id="university" class="form-control">
+        <mat-autocomplete #autoUniversity="matAutocomplete">
+          <mat-option *ngFor="let option of filteredUniversities | async" [value]="option.University">{{ option.University }}</mat-option>
+        </mat-autocomplete>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="country" class="col-sm-2 col-form-label">Country:</label>
+      <div class="col-sm-10">
+        <input type="text" matInput [matAutocomplete]="autoCountry" formControlName="country" id="country" class="form-control">
+        <mat-autocomplete #autoCountry="matAutocomplete">
+          <mat-option *ngFor="let option of filteredCountries | async" [value]="option.Country">{{ option.Country }}</mat-option>
+        </mat-autocomplete>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="city" class="col-sm-2 col-form-label">City:</label>
+      <div class="col-sm-10">
+        <input type="text" matInput [matAutocomplete]="autoCity" formControlName="city" id="city" class="form-control">
+        <mat-autocomplete #autoCity="matAutocomplete">
+          <mat-option *ngFor="let option of filteredCities | async" [value]="option.City">{{ option.City }}</mat-option>
+        </mat-autocomplete>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="price" class="col-sm-2 col-form-label">Price:</label>
+      <div class="col-sm-10 d-flex">
+        <select class="form-control" formControlName="currency" id="currency" style="max-width: 70px; margin-right: 10px;">
+          <option *ngFor="let key of (currencySymbols | keyvalue)" [value]="key.key">{{ key.value }}</option>
+        </select>
+        <input type="number" matInput formControlName="price" id="price" class="form-control">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="startDate" class="col-sm-2 col-form-label">Start Date:</label>
+      <div class="col-sm-10">
+        <input matInput [matDatepicker]="startPicker" formControlName="startDate" id="startDate" class="form-control">
+        <mat-datepicker-toggle matSuffix [for]="startPicker"></mat-datepicker-toggle>
+        <mat-datepicker #startPicker></mat-datepicker>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="endDate" class="col-sm-2 col-form-label">End Date:</label>
+      <div class="col-sm-10">
+        <input matInput [matDatepicker]="endPicker" formControlName="endDate" id="endDate" class="form-control">
+        <mat-datepicker-toggle matSuffix [for]="endPicker"></mat-datepicker-toggle>
+        <mat-datepicker #endPicker></mat-datepicker>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="description" class="col-sm-2 col-form-label">Description:</label>
+      <div class="col-sm-10">
+        <textarea matInput formControlName="description" id="description" class="form-control" rows="3"></textarea>
+      </div>
+    </div>
+    <div class="form-group row">
+      <div class="col-sm-10 offset-sm-2">
+        <button type="submit" class="btn btn-primary">Save</button>
+        <button type="button" class="btn btn-secondary" (click)="cancel()">Cancel</button>
+      </div>
+    </div>
+  </form>
+</div>

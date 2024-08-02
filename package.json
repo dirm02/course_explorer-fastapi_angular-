@@ -1,0 +1,16 @@
+{
+    "name": "course-explorer",
+    "version": "1.0.0",
+    "description": "Course Explorer",
+    "main": "Frontend/server.js",
+    "scripts": {
+      "start": "node Frontend/server.js"
+    },
+    "engines": {
+      "node": "20.x"
+    },
+    "dependencies": {
+      "express": "^4.17.1"
+    }
+  }
+  

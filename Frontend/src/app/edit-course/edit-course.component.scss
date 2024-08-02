@@ -1,0 +1,28 @@
+.container {
+    max-width: 900px;
+    margin: auto;
+  }
+  
+  h2, h3 {
+    text-align: center;
+  }
+  
+  .form-group {
+    margin-bottom: 1rem;
+  }
+  .readonly-disabled[readonly] {
+    background-color: #d6cfcf; /* Background color for the input */
+    opacity: 1; /* Ensure opacity is set to full */
+    cursor: default; /* Default cursor */
+    pointer-events: none; /* Disable all pointer events */
+    border-color: #ccc; /* Border color */
+  }
+  
+  .readonly-disabled {
+    background-color: #c5c1c1; /* Background color for the input */
+    opacity: 1; /* Ensure opacity is set to full */
+    cursor: default; /* Default cursor */
+    pointer-events: none; /* Disable all pointer events */
+    border-color: #ccc; /* Border color */
+  }
+  
